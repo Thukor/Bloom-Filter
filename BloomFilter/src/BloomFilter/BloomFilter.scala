@@ -16,7 +16,6 @@ class BloomFilter(val k: Int, val size: Int)(private val bits: BitSet = BitSet(s
   def contains(element: String): Boolean = hashes(element, k)(size).forall(hash => bits(hash))
 }
 
-
 object BloomFilter {
   def apply(k: Int, size: Int, bits: BitSet = BitSet()): BloomFilter = new BloomFilter(k, size)(bits)
 }
